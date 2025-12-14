@@ -1,0 +1,102 @@
+</html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Módulo 1 — Fundamentos de Hardware</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Módulo 1 — Fundamentos de Hardware</h1>
+      <p>Curso de Manutenção de Computadores</p>
+    </div>
+  </header>
+
+  <nav class="site-nav container">
+    <a href="../index.html">Início</a>
+    <a href="modulo1.html">Módulo 1</a>
+    <a href="modulo2.html">Módulo 2</a>
+    <a href="modulo3.html">Módulo 3</a>
+  </nav>
+
+  <main class="container">
+    <section class="course-modules">
+  <h2>Quiz — Fundamentos de Hardware</h2>
+  <p>Responda às perguntas abaixo para testar seus conhecimentos.</p>
+
+  <form id="quiz">
+
+    <div class="quiz-question">
+      <p><strong>1. Qual componente é considerado o “cérebro” do computador?</strong></p>
+      <label><input type="radio" name="q1" value="a"> Placa-mãe</label><br>
+      <label><input type="radio" name="q1" value="b"> Memória RAM</label><br>
+      <label><input type="radio" name="q1" value="c"> Processador (CPU)</label><br>
+      <label><input type="radio" name="q1" value="d"> Fonte de alimentação</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><strong>2. Qual é a função da memória RAM?</strong></p>
+      <label><input type="radio" name="q2" value="a"> Armazenar arquivos permanentemente</label><br>
+      <label><input type="radio" name="q2" value="b"> Executar cálculos gráficos</label><br>
+      <label><input type="radio" name="q2" value="c"> Guardar dados temporários em uso</label><br>
+      <label><input type="radio" name="q2" value="d"> Fornecer energia ao computador</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><strong>3. Qual destes é um dispositivo de armazenamento?</strong></p>
+      <label><input type="radio" name="q3" value="a"> Processador</label><br>
+      <label><input type="radio" name="q3" value="b"> HD ou SSD</label><br>
+      <label><input type="radio" name="q3" value="c"> Placa de vídeo</label><br>
+      <label><input type="radio" name="q3" value="d"> Cooler</label>
+    </div>
+
+    <div class="quiz-question">
+      <p><strong>4. Qual é a principal função da placa-mãe?</strong></p>
+      <label><input type="radio" name="q4" value="a"> Armazenar dados</label><br>
+      <label><input type="radio" name="q4" value="b"> Controlar a energia</label><br>
+      <label><input type="radio" name="q4" value="c"> Conectar e permitir comunicação entre os componentes</label><br>
+      <label><input type="radio" name="q4" value="d"> Processar informações</label>
+    </div>
+
+    <button type="button" onclick="corrigirQuiz()">Finalizar Quiz</button>
+  </form>
+
+  <p id="resultado"></p>
+</section>
+
+<script>
+function corrigirQuiz() {
+  let pontos = 0;
+
+  const respostas = {
+    q1: "c",
+    q2: "c",
+    q3: "b",
+    q4: "c"
+  };
+
+  for (let pergunta in respostas) {
+    const selecionada = document.querySelector(`input[name="${pergunta}"]:checked`);
+    if (selecionada && selecionada.value === respostas[pergunta]) {
+      pontos++;
+    }
+  }
+
+  document.getElementById("resultado").innerHTML =
+    `Você acertou <strong>${pontos}</strong> de <strong>4</strong> questões.`;
+}
+</script>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Curso de Manutenção de Computadores</p>
+    </div>
+  </footer>
+
+</body>
+</html>
